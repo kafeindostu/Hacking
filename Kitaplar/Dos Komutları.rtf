@@ -1,0 +1,425 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset238 Calibri;}}
+{\*\generator Riched20 10.0.10240}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang31 Her ne kadar g\'fcncelli\f1\u287?ini ve etkisini yitirse de bilmekten zarar \f0\lang1033\'e7\f1\u305?kmayaca\u287?\u305? d\f0\'fc\f1\'ba\f0\'fcncesindeyim. Ba\f1\'balayal\u305?m bakal\u305?m...\par
+\par
+Komut:\par
+ping(Packet internet groper): Bir network bilgisayara ICMP(Internet Control Message Protocol) echo paketi g\f0\'f6nderir ve geri d\'f6nen paketleri bildirir.\par
+\par
+S\'f6z dizimi:\par
+ping [-d] [ -n ] [ -q ] [-r] [-v] [ -R ] [ -c Count ] [ -f | -i Wait ] [ -l Preload ] [ -p Pattern ] [ -s PacketSize ] [ -L ] [ - I a.b.c.d. ] [ -T ttl ] Hostname [ PacketSize [ Count ] ]\par
+\par
+Argumanlar:\par
+\par
+-PacketSize\par
+G\'f6nderilen paketlerin boyutunu belirtir\par
+\par
+PacketSize arguman\f1\u305?n\u305?n kullan\u305?m\u305? iste\u287?e ba\u287?l\u305?d\u305?r. Kullan\u305?lmad\u305?\u287?\u305? zaman paket boyutu 64 byte al\u305?n\u305?r.\par
+\par
+-Hostname\par
+Paketlerin g\f0\'f6nderildi\f1\u287?i bilgisayar\u305?n ismini belirtir. Hostname arguman\u305?, isimlegonderildigi bilgisayarin ismini belirtir.Hostname argumani, isimle(nnsc.nsf.net or boston5) veya numarayla(197.5.0.8 veya 198.113.178.17) belirtilmis bir IP adresidir.\par
+\par
+Se\f0\'e7enekler:\par
+\par
+-c Count: Gonderilecek veya alinacak echo sayisini belirtir, sayi Count yerine girilir\par
+-f : paketlerin gelir gelmez goruntulenmesini saglar.Boylece kac tane paketin atildigi cok hizli bir sekilde ogrenilebilir.Sadece kok kullanici kullanabilir\par
+-I a.b.c.d : Belirtilen a.b.c.d arayuzunun coklu rollerde kullanilacagini gosterir\par
+-i Wait : Paketler arasinda Wait\rquote te belirtilen sure kadar ara birakilir(saniye olarak).-f ile kullanilmaz.\par
+-F : Normal moda gecmeden once, mumkun oldugu kadar cabuk, cok rollu ping\rquote lerin yerel geri donusumunu engeller\par
+-n : Sadece sayisal ciktileri verir. Sembolik bilgisayar adres isimlerine bakmaz\par
+-p Pattern : Gonderilen paketi maximum 16 byte\rquote lik "koruyucu" bolgeyle doldurur. Network\rquote teki bilgi kaynakli problemlerin teshisi icin kullanislidir.\par
+-q : Baslangic ve bitiste goruntulunen ozet satirlarin disinda birsey goruntulenmez\par
+-r : Rutin yollari atlayip direk olarak, bir bilgisayara, iliskilendirilmis bir network uzerinden gonderir\par
+-R : Echo istek paketinde, yol kayit ozelligi icerir ve donen paketlerde bir tampon yolu goruntuler\par
+-s PacketSize : Kac byte bilgi gonderilecegini belirtir, sayi PacketSize yerine girilir\par
+-T ttl : Cok rollu bir paket icin etkinlik suresini belirtir. Sure saniye olarak ttl yerine girilir\par
+-v : Echo cevaplarina ek olarak, alinan ICMP paketlerin listesini g\'f6r\'fcnt\'fcler\par
+\par
+\'d6rnekler:\par
+\par
+(1) canopus bilgisayari ile olan network bagini kontrol etmek ve gonderilecek echo istegi sayisini belirtmek icin:\par
+\par
+ping -c 5 canopus VEYA ping canopus 56 5\par
+\par
+Ornek Cikti:\par
+\par
+PING canopus.austin.century.com: (128.116.1.5): 56 data bytes\par
+64 bytes from 128.116.1.5: icmp_seq=0 ttl=255 time=2 ms\par
+64 bytes from 128.116.1.5: icmp_seq=1 ttl=255 time=2 ms\par
+64 bytes from 128.116.1.5: icmp_seq=2 ttl=255 time=3 ms\par
+64 bytes from 128.116.1.5: icmp_seq=3 ttl=255 time=2 ms\par
+64 bytes from 128.116.1.5: icmp_seq=4 ttl=255 time=2 ms\par
+----canopus.austin.century.com PING Statistics----\par
+round-trip min/avg/max = 2/2/3 ms\par
+\par
+\par
+\par
+(2) Gonderilecek bilginin byte sayisi:\par
+\par
+ping -s 2000 opus VEYA ping opus 2000\par
+\par
+Ornek Cikti:\par
+\par
+PING opus.austin.century.com: (129.35.34.234): 2000 data bytes\par
+2008 bytes from 129.35.34.234: icmp_seq=0 ttl=255 time=20 ms\par
+2008 bytes from 129.35.34.234: icmp_seq=1 ttl=255 time=19 ms\par
+2008 bytes from 129.35.34.234: icmp_seq=2 ttl=255 time=20 ms\par
+2008 bytes from 129.35.34.234: icmp_seq=3 ttl=255 time=20 ms\par
+2008 bytes from 129.35.34.234: icmp_seq=4 ttl=255 time=20 ms\par
+2008 bytes from 129.35.34.234: icmp_seq=5 ttl=255 time=19 ms\par
+2008 bytes from 129.35.34.234: icmp_seq=6 ttl=255 time=19 ms\par
+^C\par
+----opus.austin.century.com PING Statistics----\par
+7 packets transmitted, 7 packets received, 0% packet loss\par
+round-trip min/avg/max = 19/19/20 ms\par
+\par
+Not: Cikti, Ctrl-C\rquote ye basilana kadar tekrar eder.\par
+\par
+\par
+\par
+(3) stlopnor bilgisayarina flood-ping ozelligi istemek icin:\par
+\par
+ping -f stlopno\par
+\par
+Ornek Cikti:\par
+\par
+Ping stlopnor.austin.century.com: (129.35.34.234): 56 data bytes\par
+.^C\par
+----stlopnor.austin.century.com PING Statistics ----\par
+1098 packets transmitted, 1097 packets received, 0% packet loss\par
+round-trip min/avg/max = 4/4/11\par
+\par
+Not: Cikti, Ctrl-C\rquote ye basilana kadar tekrar eder.\par
+\par
+\par
+\par
+(4) opus bilgisayarina gonderilen paketler arasinda 5 saniyelik ara birakmak icin:\par
+\par
+ping -i5 opus\par
+\par
+Ornek Cikti:\par
+\par
+PING opus.austin.century.com: (129.35.34.234): 56 data bytes\par
+64 bytes from 129.35.34.234: icmp_seq=0 ttl=255 time=5 ms\par
+64 bytes from 129.35.34.234: icmp_seq=1 ttl=255 time=5 ms\par
+64 bytes from 129.35.34.234: icmp_seq=2 ttl=255 time=6 ms\par
+^C\par
+----opus.austin.century.com PING Statistics----\par
+3 packets transmitted, 3 packets received, 0% packet loss\par
+round-trip min/avg/max = 5/5/6 ms\par
+\par
+Not: Cikti, Ctrl-C\rquote ye basilana kadar tekrar eder.\par
+\par
+\par
+\par
+(5) Preload degiskeniyle belirtilen paket sayisini, normal moda gecmeden once mumkun oldugu kadar cabuk opus bilgisayarina gondermek icin:\par
+\par
+ping -l 10 opus\par
+\par
+Ornek Cikti:\par
+\par
+PING opus.austin.century.com: (129.35.34.234): 56 data bytes\par
+64 bytes from 129.35.34.234: icmp_seq=0 ttl=255 time=9 ms\par
+64 bytes from 129.35.34.234: icmp_seq=2 ttl=255 time=16 ms\par
+64 bytes from 129.35.34.234: icmp_seq=3 ttl=255 time=22 ms\par
+64 bytes from 129.35.34.234: icmp_seq=4 ttl=255 time=26 ms\par
+64 bytes from 129.35.34.234: icmp_seq=5 ttl=255 time=27 ms\par
+64 bytes from 129.35.34.234: icmp_seq=6 ttl=255 time=30 ms\par
+64 bytes from 129.35.34.234: icmp_seq=7 ttl=255 time=31 ms\par
+64 bytes from 129.35.34.234: icmp_seq=8 ttl=255 time=33 ms\par
+64 bytes from 129.35.34.234: icmp_seq=9 ttl=255 time=35 ms\par
+64 bytes from 129.35.34.234: icmp_seq=10 ttl=255 time=36 ms\par
+64 bytes from 129.35.34.234: icmp_seq=11 ttl=255 time=6 ms\par
+64 bytes from 129.35.34.234: icmp_seq=12 ttl=255 time=6 ms\par
+64 bytes from 129.35.34.234: icmp_seq=13 ttl=255 time=6 ms\par
+64 bytes from 129.35.34.234: icmp_seq=14 ttl=255 time=7 ms\par
+64 bytes from 129.35.34.234: icmp_seq=15 ttl=255 time=6 ms\par
+^C\par
+opus.austin.century.com PING Statistics\par
+16 packets transmitted, 16 packets received, 0% packet loss\par
+round-trip min/avg/max = 6/19/36 ms\par
+\par
+Not: Cikti, Ctrl-C\rquote ye basilana kadar tekrar eder.\par
+\par
+\par
+\par
+Bir network\rquote teki bilgi kaynakli problemleri teshis etmek icin:\par
+\par
+ping -p ff opus\par
+Bu komut paketleri opus bilgisayarina koruyucu kalipla gonderir.\par
+\par
+Ornek Cikti:\par
+\par
+PATTERN: 0xff\par
+PING opus.austin.century.com: (129.35.34.234): 56 data bytes\par
+64 bytes from 129.35.34.234: icmp_seq=0 ttl=255 time=5 ms\par
+64 bytes from 129.35.34.234: icmp_seq=1 ttl=255 time=5 ms\par
+64 bytes from 129.35.34.234: icmp_seq=2 ttl=255 time=5 ms\par
+64 bytes from 129.35.34.234: icmp_seq=3 ttl=255 time=6 ms\par
+64 bytes from 129.35.34.234: icmp_seq=4 ttl=255 time=5 ms\par
+^C\par
+----opus.austin.century.com PING Statistics----\par
+5 packets transmitted, 5 packets received, 0% packet loss\par
+round-trip min/avg/max = 5/5/6 ms\par
+\par
+Not: Cikti, Ctrl-C\rquote ye basilana kadar tekrar eder.\par
+\par
+\par
+\par
+(7) Basit cikti elde etmek icin:\par
+\par
+ping -q bach\par
+\par
+Ornek Cikti:\par
+\par
+PING bach.austin.century.com: (129.35.34.234): 56 data bytes\par
+^C\par
+----bach.austin.century.com PING Statistics----\par
+5 packets transmitted, 5 packets received, 0% packet loss\par
+round-trip min/avg/max = 5/5/8 ms \par
+\par
+Temel DOS Komutlar\f1\u305?\par
+\par
+DOS i\'baletim sisteminde normal bir kullan\u305?c\u305?n\u305?n s\u305?k\f0\'e7a ihtiya\'e7 duyaca\f1\u287?\u305? komutlar yakla\'ba\u305?k on adettir. Bunlara zaman zaman kullan\u305?labilecek yakla\'ba\u305?k on adet komut daha eklenebilir. Bunlar\u305? \f0\'f6\f1\u287?renmek suretiyle kullan\u305?c\u305? kendisi i\f0\'e7in gerekli i\f1\'balemlerin \f0\'e7o\f1\u287?unu kolayca ger\f0\'e7ekle\f1\'batirebilir. A\'baa\u287?\u305?da en \f0\'e7ok ihtiya\'e7 duyulan komutlar ve kullan\f1\u305?m bi\f0\'e7imleri verilmi\f1\'batir.(Tamamen b\f0\'fcy\'fck ve kal\f1\u305?n harfle yaz\u305?lanlar aynen girilmesi gereken komutlar, b\f0\'fcy\'fck harfle ba\f1\'balay\u305?p k\f0\'fc\'e7\'fck harfle devam eden ve yat\f1\u305?k yaz\u305?lanlarsa kullan\u305?c\u305? taraf\u305?ndan belirtilen herhangi bir isim olarak anla\'ba\u305?lmal\u305?d\u305?r.)\par
+\par
+DIR : Dosyalar\u305? listele\par
+Bulunulan klas\f0\'f6r i\'e7erisinde bulunan dosya ve klas\'f6rleri listelemek i\'e7in dir komutu kullan\f1\u305?l\u305?r. Herhangi bir dosyan\u305?n bir klas\f0\'f6rde bulunup bulunmad\f1\u305?\u287?\u305? veya ad\u305?, uzant\u305?s\u305? ve boyu gibi baz\u305? \f0\'f6zellikleri \'f6\f1\u287?renilmek istendi\u287?inde bu komut kullan\u305?l\u305?r. Alt klas\f0\'f6rlerin adlar\f1\u305?n\u305?n yan\u305?nda klas\f0\'f6r olduklar\f1\u305?n\u305? belirten 'DIR' s\f0\'f6zc\'fc\f1\u287?\f0\'fc bulunur. Bulunulan klas\'f6r yerine bir ba\f1\'baka klas\f0\'f6r de ad\f1\u305? verilerek listelenebilir. Bir dosya ad\u305? verildi\u287?inde ise sadece o dosyaya ait bilgiler ekranda g\f0\'f6r\'fcn\'fcr.\par
+\par
+DIR Bulunulan klas\'f6rdeki dosyalar\f1\u305? listele.\par
+DIR Klas\f0\'f6r Klas\'f6rdeki dosya ve alt klas\'f6rleri listele.\par
+DIR Dosya Sadece ad\f1\u305? verilen dosyay\u305? listele\par
+\par
+DOS'ta Sabit etiketli bir sabit diskte Belgelerim adl\u305? klas\f0\'f6rde bulunuldu\f1\u287?u s\u305?rada dir girilirse ekranda a\'baa\u287?\u305?dakine benzer bir \f0\'e7\f1\u305?kt\u305? g\f0\'f6r\'fcn\'fcr. (Elbette \'e7\f1\u305?kt\u305? her bilgisayarda, bulunulan klas\f0\'f6re ve i\'e7inde bulunan dosyalara g\'f6re de\f1\u287?i\'baecektir.)\par
+\par
+C s\f0\'fcr\'fcc\'fcs\'fcndeki birim Sabit\par
+Birim Seri Numaras\f1\u305? 3867-1CFF\par
+C:\\Belgelerim dizini\par
+\par
+. <DIR> 15/09/98 14:40\par
+.. <DIR> 15/09/98 14:40 \par
+Resimler <DIR> 15/09/98 14:40\par
+Yaz\u305?lar <DIR> 15/09/98 14:40 \par
+Programlar <DIR> 15/09/98 14:40\par
+Notlar.txt 15/09/98 14:40 \par
+Okubeni.txt 15/09/98 14:40\par
+2 dosya 2456 bayt\par
+5 dizin 324.456.765 bayt bo\'ba\par
+\par
+CD : Ba\'baka klas\f0\'f6re ge\'e7\par
+\par
+Bir klas\'f6rden di\f1\u287?erine ge\f0\'e7mek i\'e7in, ba\f1\'baka bir deyi\'bale klas\f0\'f6r de\f1\u287?i\'batirmek i\f0\'e7in cd komutu kullan\f1\u305?l\u305?r. Bir klas\f0\'f6re ge\'e7ildi\f1\u287?inde komut sat\u305?r\u305?n\u305?n solunda o klas\f0\'f6r\'fcn ad\f1\u305? bulunur. Her klas\f0\'f6rde sadece ad\f1\u305? verilerek ancak bir alt\u305?ndaki klas\f0\'f6re ge\'e7ilebilir. Bir \'fcst klas\'f6re klas\'f6r ismi olarak '..' girilerek gidilebilir. Bir alt ve bir \'fcst d\'fczey d\f1\u305?\'ba\u305?ndakiler ge\f0\'e7mek ya ad\f1\u305?m\u305? ad\u305?m klas\f0\'f6r de\f1\u287?i\'batirerek ya da ge\f0\'e7ilecek klas\'f6r\'fcn tam yolu verilerek ula\f1\'ba\u305?labilir.\par
+\par
+CD Klas\f0\'f6r Klas\'f6re ge\'e7.\par
+CD .. Bir \'fcsteki klas\'f6re ge\'e7.\par
+CD Bulunulan klas\'f6r\'fc g\'f6ster.\par
+\par
+MD : Klas\'f6r yarat.\par
+\par
+Yeni bir klas\'f6r yaratmak i\'e7in md komutu kullan\f1\u305?l\u305?r. Bu komut girildi\u287?inde yarat\u305?lan klas\f0\'f6r elbette hen\'fcz bo\f1\'ba durumdad\u305?r. Kullan\u305?c\u305?lar butun dosyalar\u305?n\u305? ayn\u305? yerde bulundurmak yerine, onlar\u305? belli gruplara ay\u305?r\u305?p, her bir grubu bu komutla yaratacaklar\u305? ayr\u305? bir klas\f0\'f6rlerde tutabilirler.\par
+\par
+MD Klas\'f6r Klas\'f6r yarat.\par
+\par
+RD : Klas\'f6r\'fc yok et.\par
+\par
+Bo\f1\'ba bir klas\f0\'f6r\'fc silmek i\'e7in rd komutu kullan\f1\u305?l\u305?r. Ancak silinecek klas\f0\'f6r bo\f1\'ba olmal\u305?d\u305?r, yoksa silinemez. Bir klas\f0\'f6r yok edilmeden \'f6nce i\'e7erisinde bulunan b\'fct\'fcn dosyalar\f1\u305?n silinmesi gerekir.\par
+\par
+RD Klas\f0\'f6r Klas\'f6r\'fc yok et.\par
+\par
+DEL : Dosya sil.\par
+Bir dosyay\f1\u305? silmek i\f0\'e7in del komutu kullan\f1\u305?l\u305?r. Bir dosya silindi\u287?ine sadece i\f0\'e7indekiler silinmez, dosya t\'fcm\'fcyle yok olur. Baz\f1\u305? ko\'baullarda silinen bir dosyan\u305?n kurtar\u305?lmas\u305? \f0\'f6zel baz\f1\u305? programlar arac\u305?l\u305?\u287?\u305?yla m\f0\'fcmk\'fcn olabilmektedir. Ancak bu programlar her yerde bulunmamakta ve kurtarma i\f1\'balemlerini her zaman ba\'baar\u305?yla ger\f0\'e7ekle\f1\'batirememektedirler. O y\f0\'fczden bu komut dikkatli kullan\f1\u305?lmal\u305? ve \f0\'f6nemli dosyalar\f1\u305?n her zaman bir yede\u287?i bulundurulmal\u305?d\u305?r.\par
+\par
+DEL Dosya Dosyay\u305? sil.\par
+DEL Klas\f0\'f6r Klas\'f6r\'fcn i\'e7indeki t\'fcm dosyalar\f1\u305? sil. \par
+\par
+TYPE : Dosya i\f0\'e7eri\f1\u287?ini g\f0\'f6ster\par
+\par
+Bir dosyan\f1\u305?n i\f0\'e7eri\f1\u287?i ( i\f0\'e7erisinde bulunanlar yaz\f1\u305?lar) type komutuyla ekranda g\f0\'f6sterilebilir. Ancak sadece i\'e7erisinde standart bi\'e7imde olu\f1\'baturulmu\'ba metinler bulunan dosyalar bu yolla g\f0\'f6r\'fcnt\'fclenebilir. Yaz\f1\u305?lara bi\f0\'e7imlendirme gibi bir \'e7ok i\f1\'balev ve g\f0\'f6r\'fcn\'fc\f1\'ba de\u287?i\'baikli\u287?i eklemeleri yapabilen 'Word' gibi kelime i\'balemci programlarda olu\'baturulmu\'ba dosyalar\u305?n i\f0\'e7erikleri bu yolla (\'f6zel olarak metin dosyas\f1\u305? olarak kaydedilmediyse) g\f0\'f6r\'fcnt\'fclenemez. Ayr\f1\u305?ca yaz\u305? d\u305?\'ba\u305?nda resim, program gibi dosya t\f0\'fcrleriyle bu komut kullan\f1\u305?ld\u305?\u287?\u305?nda ekranda sa\f0\'e7ma sapan karakterler g\'f6r\'fcn\'fcr.\par
+\par
+TYPE Dosya Dosyan\f1\u305?n i\f0\'e7eri\f1\u287?ini g\f0\'f6r\'fcnt\'fcle. \par
+\par
+COPY : Dosya kopyala\par
+\par
+Bir dosyan\f1\u305?n kopyas\u305?n\u305? elde etmek i\f0\'e7in copy komutu kullan\f1\u305?l\u305?r. Komutla birlikte sadece kopyalanaca\u287?\u305? klas\f0\'f6r\'fcn ismi verilirse ayn\f1\u305? isimde ve yan\u305? i\f0\'e7erikte yeni bir dosya yarat\f1\u305?lm\u305?\'ba olur. Klas\f0\'f6r\'fcn yan\f1\u305?nda bir dosya ismi de verilirse i\f0\'e7eri\f1\u287?i ayn\u305? fakat ad\u305? de\u287?i\'baik bir dosya \f0\'fcretilmi\f1\'ba olur.\par
+\par
+COPY As\u305?lDosya KopyaDosya Dosyan\u305?n kopyas\u305?n\u305? \f0\'e7\f1\u305?kar.\par
+COPY As\u305?lDosya Klas\f0\'f6r Dosyay\f1\u305? klas\f0\'f6re kopyala.\par
+\par
+MOVE : Dosya veya klas\'f6r\'fc ta\f1\'ba\u305?.\par
+\par
+Bir dosyay\u305? ve klas\f0\'f6r\'fc bulundu\f1\u287?u yerden ba\'baka bir yere ta\'ba\u305?mak i\f0\'e7in move komutu kullan\f1\u305?l\u305?r. Ayn\u305? i\'balem \f0\'f6nce bir kopyan\f1\u305?n ba\'baka bir yerde yarat\u305?l\u305?p, daha sonra orijinalinin silinmesiyle de ger\f0\'e7ekle\f1\'batirilebilir.\par
+\par
+MOVE Dosya/Klas\f0\'f6r Gidece\f1\u287?iYer Dosya veya klas\f0\'f6r\'fc ta\f1\'ba\u305?.\par
+\par
+REN : Dosyan\u305?n ad\u305?n\u305? de\u287?i\'batirir\par
+\par
+Bir dosyan\u305?n ad\u305?n\u305? de\u287?i\'batirmek i\f0\'e7in 'ren' komutundan yararlan\f1\u305?l\u305?r. Dosyan\u305?n sadece ad\u305? de\u287?i\'bairken, i\f0\'e7eri\f1\u287?i ayn\u305? kal\u305?r.\par
+\par
+REN EskiDosya YeniAd\u305? Dosyan\u305?n ad\u305?n\u305? de\u287?i\'batir.\par
+\par
+FORMAT : Disk(et)i bi\f0\'e7imlendir.\par
+\par
+Her disk veya disket, belli bir i\f1\'baletim sistemi taraf\u305?ndan tan\u305?nmas\u305? i\f0\'e7in bi\'e7imlendirme denilen bir i\f1\'balemden ge\f0\'e7mek zorundad\f1\u305?r. Bu i\'balemi ger\f0\'e7ekle\f1\'batiren komut format komutudur. Sabit diskler haz\u305?r bi\f0\'e7imlendirilmi\f1\'ba (ve genellikle i\'baletim sistemiyle y\f0\'fckl\'fc) olarak sat\f1\u305?ld\u305?\u287?\u305? i\f0\'e7in kullan\f1\u305?c\u305? taraf\u305?ndan bi\f0\'e7imlendirilmesi gerekmez. Baz\f1\u305? disketler de haz\u305?r bi\f0\'e7imlendirilmi\f1\'ba olarak sat\u305?ld\u305?\u287?\u305? i\f0\'e7in i\f1\'baletim sistemi onlar disket s\f0\'fcr\'fcc\'fcye takar takmaz tan\f1\u305?r. Bir disk veya disket bi\f0\'e7imlendirildi\f1\u287?inde i\f0\'e7erdi\f1\u287?i t\f0\'fcm bilgiler yok olur. Bunlar geri getirmek normal ko\f1\'baullarda m\f0\'fcmk\'fcn de\f1\u287?ildir. Sabit diskler zorunlu olmad\u305?k\f0\'e7a ve uzman bir kullan\f1\u305?c\u305? taraf\u305?ndan gerekli g\f0\'f6r\'fclmedik\'e7e kesinlikle bi\'e7imlendirilmemelidir.\par
+\par
+FORMAT S\'fcr\'fcc\'fc S\'fcr\'fcc\'fcy\'fc bi\'e7imlendir.\par
+\par
+EDIT : Dosya d\'fczenle.\par
+\par
+DOS i\f1\'baletim sisteminde standart metin dosyalar\u305?n d\f0\'fczenlemek i\'e7in edit adl\f1\u305? program kullan\u305?l\u305?r. Bu program DOS ile birlikte gelmekle birlikte asl\u305?nda bir komut de\u287?il, \f0\'e7e\f1\'baitli men\f0\'fclerle zenginle\f1\'batirilmi\'ba metin d\f0\'fczenlemeZ uygulamas\f1\u305?d\u305?r. Kullan\u305?c\u305?lar genellikle daha \f0\'e7ok i\f1\'baleve sahip di\u287?er kelime i\'balemci programlarla \f0\'e7al\f1\u305?\'ba\u305?rlar. Ancak bu programlar\u305?n i\'baletim sisteminden ayr\u305? olarak sat\u305?n al\u305?nmas\u305?, y\f0\'fcklenmesi ve genellikle karma\f1\'ba\u305?k olan kullan\u305?mlar\u305?n\u305?n \f0\'f6\f1\u287?renilmesi gerekir. Oysa 'edit' daima DOS'la birlikte bulunur ve her zaman kullan\u305?labilir.\par
+\par
+EDIT Dosya Dosyay\u305? d\f0\'fczenlenmesi i\'e7in a\'e7.\par
+\par
+A: Disket s\'fcr\'fcc\'fcye ge\'e7.\par
+\par
+Sabit disk veya ba\f1\'baka bir s\f0\'fcr\'fcc\'fcdeyken disket s\'fcr\'fcc\'fcs\'fcne ge\'e7mek i\'e7in a: girilmelidir. Harfi izleyen ':' i\f1\'baaretini kullanmak zorunludur.\par
+\par
+C: Sabit diske ge\f0\'e7.\par
+\par
+Disket s\'fcr\'fcc\'fc veya ba\f1\'baka bir s\f0\'fcr\'fcc\'fcdeyken sabit diske ge\'e7mek i\'e7in c: girilmelidir. B\'f6ylece s\'fcr\'fcc\'fc de\f1\u287?i\'batirip tekrar geri gelindi\u287?inde, komut sat\u305?r\u305?nda \f0\'f6nceki durumda bulunulan klas\'f6r\'fcn ismi bulunur. Bir s\'fcr\'fcc\'fcye ge\'e7mek o s\'fcr\'fcc\'fcn\'fcn en tepesine ge\'e7mek demek de\f1\u287?ildir. Sabit diskte herhangi bir klas\f0\'f6r\'fcn alt\f1\u305?nda bulunuyorken en tepeye yani k\f0\'f6k dizine ge\'e7mek i\'e7in cd komutu klas\'f6r ad\f1\u305? olarak '\\' girilmelidir.\par
+\par
+\u304?leri DOS Komutlar\u305?\par
+\par
+Yukar\u305?da say\u305?lan komutlar d\u305?\'ba\u305?nda, kullan\u305?c\u305?lar\u305?n zaman zaman gereksinim duyabilecekleri bir \f0\'e7ok komut bulunmaktad\f1\u305?r. Normal bir kullan\u305?c\u305? bunlardan sadece \f0\'f6nemli olanlar\f1\u305? bilmelidir. Di\u287?er komutlar\u305?n \f0\'e7o\f1\u287?u kullan\u305?c\u305?n\u305?n normal \'baartlarda gereksinim duymad\u305?\u287?\u305?, sadece \f0\'f6zel bir i\f1\'balevi yerine getiren komutlard\u305?r. Burada de\u287?inilecek komutlar d\u305?\'ba\u305?nda kalan baz\u305? komutlar da son derece tehlikeli, uzman kullan\u305?c\u305?lar d\u305?\'ba\u305?ndakileri kesinlikle kullanmamas\u305? gereken komutlard\u305?r. Burada de\u287?inilenlerse normal kullan\u305?c\u305?lar\u305?n da zaman zaman ihtiya\f0\'e7 duyabilece\f1\u287?i komutlard\u305?r.\par
+\par
+CLS : Ekran\u305? temizle.\par
+\par
+DOS ekran\u305?nda daha \f0\'f6nce girilen komutlar ve bunlar\f1\u305?n \f0\'fcretti\f1\u287?i sonu\f0\'e7lar komut sat\f1\u305?r\u305?n\u305?n ( genellikle sadece son birka\f0\'e7 komutunkiler g\'f6r\'fcnecek \'fczere) yukar\f1\u305?s\u305?nda kal\u305?r. Komut sat\u305?r\u305?n\u305?n \f0\'fczerindekileri silmek ve komut sat\f1\u305?r\u305?n\u305? en \f0\'fcst sat\f1\u305?ra almak i\f0\'e7in cls komutu kullan\f1\u305?l\u305?r.\par
+\par
+DATE : Tarihi g\f0\'f6ster.\par
+\par
+DOS i\f1\'baletim sisteminde g\f0\'fcn\'fc tarihini g\'f6rmek ve de\f1\u287?i\'batirmek i\f0\'e7in 'date' komutu kullan\f1\u305?l\u305?r. Bu komut girildi\u287?inde ekran bug\f0\'fcn\'fcn tarihi gelir ve yeni tarihin girilmesi beklenir. Hi\'e7bir \f1\'baey girmeden 'Enter' tu\'bauna bas\u305?l\u305?rsa tarih de\u287?i\'batirilmeksizin bug\f0\'fcn\'fcn tarihi \'f6\f1\u287?renilmi\'ba olur.\par
+TIME : Saati g\f0\'f6ster (veya de\f1\u287?i\'batir).\par
+\par
+DOS'ta sistem saatini (bilgisayar\u305?n i\f0\'e7indeki saat) de\f1\u287?i\'batirmek veya \f0\'f6\f1\u287?renmek i\f0\'e7in time komutu kullan\f1\u305?l\u305?r. Yeni saat girmek yerin 'enter' tu\'bauna bas\u305?l\u305?rsa saat de\u287?i\'bamez. Saat sadece \f0\'f6\f1\u287?renilmi\'ba olur.\par
+\par
+EXIT : Oturumdan \f0\'e7\f1\u305?k.\par
+\par
+Her komut i\'baletim sisteminde bulunan ve komut yorumlay\u305?c\u305?s\u305? ad\u305? verilen program taraf\u305?ndan \f0\'e7al\f1\u305?\'bat\u305?r\u305?l\u305?r. Baz\u305? durumlarda bir yorumlay\u305?c\u305?dan ba\'bakas\u305?na girilebilir. Her girilen yorumlay\u305?c\u305? oturum ad\u305? verilen yeni bir ortama girer. Bu, her hangi bir program\u305?n veya i\'baletim sisteminin i\f0\'e7inden \'e7\f1\u305?kmadan DOS komutlar\u305?n\u305?n kullan\u305?lmas\u305? i\f0\'e7in de gerekli olabilir. B\'f6yle durumlarda bir oturumdan \'e7\f1\u305?k\u305?p bir \f0\'f6nceki ortama d\'f6nmek i\'e7in exit komutu kullan\f1\u305?l\u305?r. Windows i\'baletim sisteminde a\f0\'e7\f1\u305?lan bir DOS oturumundan bu komutla \f0\'e7\f1\u305?k\u305?l\u305?p yine windows ortam\u305?na d\f0\'f6n\'fclebilir.\par
+MORE : \'c7\f1\u305?kt\u305?y\u305? sayfa, sayfa g\f0\'f6ster.\par
+\par
+Baz\f1\u305? komutlar\u305?n \f0\'e7\f1\u305?kt\u305?s\u305? ekran s\u305?\u287?maz. Bu durumda \f0\'e7\f1\u305?kt\u305? bir insan\u305?n okuyamayaca\u287?\u305? h\u305?zda ekrana gelir ve gider. Sonu\f0\'e7ta \'e7\f1\u305?kt\u305?n\u305?n sadece son k\u305?sm\u305? g\f0\'f6r\'fcn\'fcr. Bu durumu \'f6nlemek ve bir komutun \'e7\f1\u305?kt\u305?s\u305?n\u305? her defas\u305?nda bir sayfa g\f0\'f6r\'fcnecek \f1\'baekilde ekrana getirmek i\f0\'e7in more komutu kullan\f1\u305?l\u305?r. Her gelen sayfadan sonrakine ge\f0\'e7mek i\'e7in herhangi bir du\f1\'baa basmak yeterlidir. Bu komutun kullan\u305?l\u305?\'ba\u305? ba\'baka bir komutla birlikte \f0\'e7al\f1\u305?\'bamas\u305? gerekti\u287?inden di\u287?erlerinden farkl\u305?d\u305?r. \f0\'d6nce \'e7\f1\u305?kt\u305?s\u305? sayfa g\f0\'f6sterilecek komut t\'fcm parametre ve se\'e7enekleriyle birlikte yaz\f1\u305?l\u305?r, sonra boru ( | ) ad\u305? verilen i\'baaret konur ve 'more' komutu yaz\u305?l\u305?r.\par
+\par
+Komut | MORE Komutun \f0\'e7\f1\u305?kt\u305?s\u305?n\u305? sayfa sayfa g\f0\'f6ster.\par
+\par
+TREE : T\'fcm a\f1\u287?a\f0\'e7 yap\f1\u305?s\u305?n\u305? g\f0\'f6ster.\par
+\par
+Belli bir klas\'f6r\'fcn alt\f1\u305?nda bulunan b\f0\'fct\'fcn klas\'f6rler onlar\f1\u305?nda altlar\u305? dahil olmak \f0\'fczere ekranda sergilenmek istenirse tree komutu kullan\f1\u305?l\u305?r.\par
+\par
+TREE Bulunulan klas\f0\'f6r\'fcn alt klas\'f6rlerini g\'f6ster.\par
+TREE Klas\'f6r Ad\f1\u305? verilen klas\f0\'f6r\'fcn alt klas\'f6rlerini g\'f6ster.\par
+\par
+ATTRIB : Komutlara niteliklerini de\f1\u287?i\'batir.\par
+\par
+Her dosya ar\'baiv dosyas\u305?, sistem dosyas\u305?, gizli dosya veya silinemez dosya olma gibi baz\u305? niteliklere sahiptir. Bu nitelikler \f0\'fczerinde i\f1\'balem yapmak i\f0\'e7in attrib komutu kullan\f1\u305?l\u305?r. Nitelikler s\u305?ras\u305?yla A,S,H,R harfleriyle belirtilir. Bir nitelik '+' karakteriyle verilip '-' karakteriyle geri al\u305?n\u305?r.\par
+\par
+ATTRIB +H Dosya Dosyaya gizlilik niteli\u287?i ver.\par
+ATTRIB -H Dosya Dosyan\u305?n gizlilik niteli\u287?ini kald\u305?r.\par
+ATTRIB +R Dosya Dosyaya silinemezlik niteli\u287?i ver.\par
+ATTRIB -R Dosya Dosyan\u305?n silinemezlik niteli\u287?ini kald\u305?r.\par
+\par
+FC : Dosyalar\u305? kar\'ba\u305?la\'bat\u305?r.\par
+\par
+\u304?ki dosya aras\u305?ndaki farklar\u305?n ve bu farklar\u305?n olu\'batu\u287?u sat\u305?rlar\u305?n bulunmas\u305? i\f0\'e7in kullan\f1\u305?lan komut fc'dir . Bu komut iki dosyan\u305?n ( isim ve konum a\f0\'e7\f1\u305?s\u305?ndan farkl\u305? olsalar da) i\f0\'e7erik a\'e7\f1\u305?s\u305?ndan ayn\u305? olup olmad\u305?\u287?\u305?n\u305? kontrol etmek i\f0\'e7in kullan\f1\u305?labilir\par
+\par
+FC Dosya1 Dosya2 Ad\u305? verilen dosyalar\u305? kar\'ba\u305?la\'bat\u305?r.\par
+\par
+LABEL : Diskin etiketini de\u287?i\'batir\par
+\par
+Her disk ve disketin bir etiket'i yani ad\u305? vard\u305?r ve bu ad label komutuyla de\u287?i\'batirilebilir. Baz\u305? durumlarda i\'baletim sistemleri, disket veya disketleri \f0\'fczerindeki yaz\f1\u305? veya renk gibi fiziksel \f0\'f6zelliklerinden tan\f1\u305?yamayaca\u287?\u305? i\f0\'e7in, bir diske veya diskete bu isimle referans verirler.\par
+\par
+LABEL S\'fcr\'fcc\'fc S\'fcr\'fcc\'fcn\'fcn etiketini de\f1\u287?i\'batir.\par
+\par
+FIND : Belirtilen yaz\u305?y\u305? bul.\par
+\par
+Bir dosya i\f0\'e7erisinde ge\'e7en bir s\'f6zc\'fck veya ifadeyi bulmak i\'e7in find komutu kullan\f1\u305?l\u305?r. Bu komutla i\f0\'e7eri\f1\u287?i hakk\u305?nda belli bir fikir sahibi olunan ancak ismi bilinmeyen dosyalar\u305? bulmak m\f0\'fcmk\'fcn olabilmektedir.\par
+\par
+FIND "Yaz\f1\u305?" Dosya Yaz\u305?y\u305? dosya i\f0\'e7inde bul.\par
+\par
+CHKDSK : Disk(et)in durumunu g\'f6ster.\par
+\par
+Bir disk veya disket i\'e7inde kullan\f1\u305?lan ve kullan\u305?lmayan alanlar\u305?n b\f0\'fcy\'fckl\'fc\f1\u287?\f0\'fcn\'fc, ne kadarl\f1\u305?k k\u305?sm\u305?n bozuk veya kullan\u305?lamaz durumda oldu\u287?unu olmak i\f0\'e7in chkdsk komutu kullan\f1\u305?l\u305?r. Ancak disk veya disketler \f0\'fczerinde daha geni\f1\'ba bir inceleme yapmak i\f0\'e7in daha kapsaml\f1\u305? bir program kullanmak gerekir\par
+MEM : Belle\u287?in durumunu g\f0\'f6ster.\par
+\par
+Bilgisayar\f1\u305?n i\f0\'e7indeki bellek biriminin kapasitesini, belli bir anda bu kapasitenin ne kadar\f1\u305?n\u305?n kullan\u305?ld\u305?\u287?\u305?n\u305? ve ne kadar\u305?n\u305?n bo\'ba oldu\u287?unu \f0\'f6\f1\u287?renmek i\f0\'e7in mem komutu kullan\f1\u305?l\u305?r.\par
+\par
+DELTREE : Klas\f0\'f6r\'fc alt\f1\u305?ndakilerle birlikte yok et.\par
+\par
+Bir klas\f0\'f6r 'del' komutuyla silindi\f1\u287?inde yok olmaz. Silinen sadece alt\u305?nda bulunan dosyalard\u305?r. Bununla birlikle, 'rd' komutu da bir klas\f0\'f6r\'fc bo\f1\'ba olmad\u305?k\f0\'e7a silmemektedir. Bir klas\'f6r\'fc alt\f1\u305?ndaki dosya ve klas\f0\'f6rleriyle birlikte yok etmek i\'e7in deltree komutunu kullanmak gerekir. Bu komutun geri d\'f6n\'fc\f1\'ba\f0\'fc olmad\f1\u305?\u287?\u305? i\f0\'e7in yok edilecek klas\'f6r\'fcn alt\f1\u305?nda bulunan b\f0\'fct\'fcn nesnelerin ne i\'e7erdi\f1\u287?i bilinerek kullan\u305?lmal\u305?d\u305?r.\par
+\par
+DELTREE Klas\f0\'f6r Klas\'f6r\'fc alt\f1\u305?ndakilerle birlikte yok et. \par
+\par
+Komutlarla Parametreler, Se\f0\'e7enekler ve Yard\f1\u305?m\par
+\par
+Bir komutla birlikte girilen parametre, o komutun \f0\'e7al\f1\u305?\'bamas\u305? i\f0\'e7in gerekli bilgi demektir. \'d6rne\f1\u287?in dosya silmeye yarayan "del" komutu ile birlikte silinmesi istenen dosyan\u305?n ismi parametre olarak girilmesi gereklidir. Aksi takdirde komut hangi dosyay\u305? silece\u287?ini bilemez. Komutla birlikte ' / ' i\'baaretinden sonra kullan\u305?lan se\f0\'e7enekler ise komutlar\f1\u305?n \f0\'e7al\f1\u305?\'bamas\u305?n\u305?n kullan\u305?c\u305?n\u305?n isteklerine uygun olarak de\u287?i\'batirilmesinde kullan\u305?l\u305?r. Bir klas\f0\'f6rdeki dosyalar\f1\u305? listeleyen "dir" komutuyla birlikte /W girilirse listeleme \f0\'f6zet bir bi\'e7imde sadece dosya ve dizin adlar\f1\u305?yla yap\u305?l\u305?r.\par
+\par
+Herhangi bir komut hakk\u305?nda yard\u305?m, o komutun ard\u305?ndan se\f0\'e7enek olarak ? i\f1\'baareti girilmesiyle elde edilir.\par
+\par
+Komut /?\par
+\par
+Gelen yard\u305?m ekran\u305?nda komutla birlikte girilecek parametre ve se\f0\'e7enekler gerekli a\'e7\f1\u305?klamalarla birlikte sergilenir. \f0\'c7evresi ' [ ' ve ' ] ' ayra\'e7lar\f1\u305?yla \f0\'e7evrelenmi\f1\'ba parametre ve se\f0\'e7enekler iste\f1\u287?e ba\u287?l\u305? demektir. Ayr\u305?ca t\f0\'fcm komutlar hakk\f1\u305?nda yard\u305?m help komutunun girilmesiyle de elde edilebilir.\par
+\par
+Dosya ve Klas\f0\'f6r \f1\u304?simleri\par
+\par
+DOS'ta dosya ve klas\f0\'f6rlerin isimleri belli ko\f1\'baullara uymak zorundad\u305?r. Bir isim sadece harf, say\u305? ve ge\f0\'e7erli say\f1\u305?lan i\'baaretlerden olu\'baabilir. Ba\'baka herhangi bir yerde belli bir anlam\u305? olan i\'baaretler kesinlikle isimlerde kullan\u305?lmaz. Komut veya dosya isimlerinde b\f0\'fcy\'fck harf k\'fc\'e7\'fck harf ayr\f1\u305?m\u305? yap\u305?lmaz. A\'baa\u287?\u305?daki b\f0\'fct\'fcn ifadeler ayn\f1\u305? kabul edilir :\par
+\par
+CD OYUN\par
+Cd Oyun\par
+Cd oyun\par
+cD oYuN\par
+\par
+Klas\f0\'f6r isimleri en fazla sekiz karakterden olu\f1\'baabilir. Bu kural dosya isimleri i\f0\'e7in de ge\'e7erlidir ancak dosyalara en fazla \'fc\'e7 karakter uzunlu\f1\u287?unda olabilen bir uzant\u305?\rquote ya sahip olabilir. \u304?simle uzant\u305? aras\u305?nda bir nokta ( . ) bulunur. \par
+\par
+\f0\'d6rne\f1\u287?in :\par
+Dosyam.txt\par
+\par
+ge\f0\'e7erli bir isimdir. \f1\u304?simler genellikle ayn\u305? t\f0\'fcrde veya konumdaki farkl\f1\u305? i\f0\'e7eri\f1\u287?e sahip dosya veya klas\f0\'f6rleri birbirinden ay\f1\u305?rmak i\f0\'e7in kullan\f1\u305?ld\u305?\u287?\u305?ndan, i\f0\'e7erikleri hakk\f1\u305?nda fikir veren bir isim ta\'ba\u305?malar\u305? yararl\u305?d\u305?r. Yaz\u305?m\u305? kolay olsun diye bir iki karakterlik k\u305?sa isimler kullan\u305?l\u305?rsa, bir dosyan\u305?n aranmas\u305? durumunda g\f0\'fc\'e7l\'fckle kar\f1\'ba\u305?la\'ba\u305?l\u305?r. Dosyalar\u305?n uzant\u305?lar\u305? da dosyalar\u305?n t\f0\'fcr\'fc hakk\f1\u305?nda bir fikir verir.\par
+\par
+A\'baa\u287?\u305?da \f0\'e7ok kullan\f1\u305?lan dosya uzant\u305?lar\u305? ve anlamlar\u305? verilmektedir ( * yerine herhangi bir isim gelebilir)\par
+\par
+* *.txt D\f0\'fcz Metin Dosyas\f1\u305?\par
+* *.exe \f0\'c7al\f1\u305?\'bat\u305?r\u305?labilir Program Dosyas\u305?.\par
+* *.gif Bir T\f0\'fcr Resim Dosyas\f1\u305?.\par
+OS'ta Kullan\u305?lan Baz\u305? \u304?\'baaretler\par
+\\ : Klas\f0\'f6r Alt\f1\u305?nda.\par
+\par
+Bir klas\f0\'f6r veya dosyan\f1\u305?n bir klas\f0\'f6r veya s\'fcr\'fcc\'fcn\'fcn alt\f1\u305?nda oldu\u287?unu belirten i\'baaret ters b\f0\'f6l\'fcm ( \\ ) karakteridir. Bir klas\'f6rden sadece kendisinin ba\f1\u287?l\u305? oldu\u287?u bir \f0\'fcst klas\'f6r ve kendisinin bir d\'fczey alt\f1\u305?nda bulunan dosya ve klas\f0\'f6rlere eri\f1\'bailebildi\u287?i i\f0\'e7in, bunlar\f1\u305?n d\u305?\'ba\u305?ndaki klas\f0\'f6rlerde bulunan klas\'f6r ve dosyalara eri\f1\'bamek i\f0\'e7in konumlar\f1\u305?n\u305? tam olarak belirtilmesi gerekir. Aksi taktirde dosya veya klas\f0\'f6r\'fcn bulunamad\f1\u305?\u287?\u305?n\u305? belirten bir mesajla kar\'ba\u305?la\'ba\u305?l\u305?r. Klas\f0\'f6rler ve dosyalar aras\f1\u305?nda bu i\'baaretten ba\'baka bo\'baluk b\u305?rak\u305?lmaz. Bu i\'baaretle birbirine ba\u287?lanm\u305?\'ba klas\f0\'f6rler veya dosya ismi sadece tek bir nesneyi g\'f6sterir.\par
+\par
+\'dcstKlas\'f6r\\AltKlas\'f6r\\Dosya\par
+\par
+* : Bir yaz\f1\u305?n\u305?n yerini tut.\par
+\par
+Birden \f0\'e7ok dosya veya klas\'f6rlerle i\f1\'balem yap\u305?lmas\u305? gerekti\u287?inde, her madde i\f0\'e7in tek tek komut kullan\f1\u305?lmas\u305? yerine, ortak \f0\'f6zellikler belirtilir ve y\f1\u305?ld\u305?z ( * ) karakterinin kullan\u305?l\u305?r. Bu karakter herhangi bir karakter dizisi anlam\u305?na gelir ve hi\f0\'e7 bir karakterin bulunmamas\f1\u305? gibi bir durumu da kapsar.\par
+\par
+*.txt B\f0\'fct\'fcn .txt uzant\f1\u305?l\u305? dosyalar.\par
+A*.* A ile ba\'balayan t\f0\'fcm dosya veya dizinler.\par
+A*B.doc A'yla ba\f1\'balayan B'yle biten doc uzant\u305?l\u305? dosyalar.\par
+\par
+? : Bir harfin yerini tut.\par
+\par
+T\u305?pk\u305? y\u305?ld\u305?z karakteri gibi soru i\'baareti ( ? ) de 'joker' olarak kullan\u305?labilir. Ancak bu i\'baaret sadece bir karakterin yerini tutar ve bulundu\u287?u konuma iki karakter girmesi durumunda ge\f0\'e7erli bir se\'e7enek olarak kabul etmez.\par
+\par
+A?B.txt Ba\f1\'ba\u305? A sonu B olan \f0\'fc\'e7 harfli txt uzant\f1\u305?l\u305? dosyalar. \par
+\par
+| : Komut \f0\'e7\f1\u305?kt\u305?s\u305?n\u305? ba\'baka bir komuta g\f0\'f6nder.\par
+\par
+Baz\f1\u305? durumlarda bir komutun \f0\'e7\f1\u305?kt\u305?s\u305? boru ( | ) ad\u305? verilen karakter yard\u305?m\u305?yla bir komuta girdi olarak g\f0\'f6nderilebilir. \f1\u304?kinci komut yapaca\u287?\u305? i\'balevi bu girdi \f0\'fczerinde ger\'e7ekle\f1\'batirip sonucu (e\u287?er sonunda yine bir boru ve \f0\'e7\f1\u305?kt\u305?y\u305? girdi olacak ba\'baka bir komut yoksa ) ekrana yazar.\par
+\par
+Komut1 | Komut2 \u304?lk komutun \f0\'e7\f1\u305?kt\u305?s\u305?n\u305? ikincisinin girdisi olsun. \par
+\par
+> : Komutun \f0\'e7\f1\u305?kt\u305?s\u305?n\u305? dosyaya yaz.\par
+\par
+Bir komutun \f0\'e7\f1\u305?kt\u305?s\u305?n\u305? ekran yerine bir dosyaya g\f0\'f6ndermek ( yazd\f1\u305?rmak) istendi\u287?inde 'b\f0\'fcy\'fckt\'fcr' ( > ) i\f1\'baareti kullan\u305?labilir. Sonucu g\f0\'f6rmek o dosyan\f1\u305?n 'type' komutuyla ekranda g\f0\'f6sterilmesiyle g\'f6r\'fclebilir. Bu i\f1\'baaretin kullan\u305?lmas\u305? i\f0\'e7in kullan\f1\u305?lan komutun belli bir ekran \f0\'e7\f1\u305?kt\u305?s\u305? \f0\'fcreten bir komut olmas\f1\u305? gerekir. Aksi taktirde dosyaya yaz\u305?lacak herhangi bir metin olu\'bamaz.\par
+\par
+Komut > Dosya Komutun \f0\'e7\f1\u305?kt\u305?s\u305?n\u305? ekran yerine dosyaya yaz. \par
+\par
+/ : Komutla Se\f0\'e7enek Kullan\par
+\par
+Herhangi bir komuta se\'e7enek girmek i\'e7in ( / ) karakteri ( sla\f1\'ba ) kullan\u305?l\u305?r. Bu karakterin ard\u305?ndan herhangi bir anahtar ( genellikle belli bir i\'balemi veya tercihi simgeleyen ) bir harf girilir. Birden fazla se\f0\'e7enek (birbirleriyle \'e7eli\f1\'bamedikleri durumunda) artarda girilebilir.\par
+\par
+Komut Parametreler /Se\f0\'e7enek Komuta se\'e7enek girmek. \par
+\par
+. : Dosya \f1\u304?sim Uzant\u305? Ay\u305?r\u305?c\u305?\par
+\par
+Bir dosya ismiyle uzant\u305?s\u305?n\u305? ay\u305?rmak i\f0\'e7in ( . ) karakteri ( nokta ) kullan\f1\u305?l\u305?r. Bu karakterin sol taraf\u305? isim sa\u287? taraf\u305? da uzant\u305? olarak addedilir. Bir dosyan\u305?n ismi ve uzant\u305?s\u305? birlikte dosyan\u305?n kendisini ifade etti\u287?inden noktan\u305?n ne sa\u287?\u305?nda ne de solunda bo\'baluk b\u305?rak\u305?lmadan, bir b\f0\'fct\'fcn olarak yaz\f1\u305?l\u305?r.\par
+\par
+\u304?sim.Uzt \u304?simle uzant\u305?y\u305? ay\u305?rmak.\f0\lang31\par
+}
+ 

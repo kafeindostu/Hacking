@@ -1,0 +1,93 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset238 Calibri;}}
+{\*\generator Riched20 10.0.10240}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang31 1) shell nedir?\par
+\par
+Shell Y\'fcklendi\f1\u287?i Sitede Size \f0\lang1033\'c7e\f1\'baitli Yetkiler Veren Bir Materyaldir. Bu Yetkiler; Okuma, Yazma ve Silme Yetkileridir. shell Att\u305?\u287?\u305?n\u305?z Sitede Bazen Bir Site Sahibinin Yetkilerini Kullanabilirken, Bazende Server(Host) Sahibinin Yetkilerini Kullana Biliyorsunuz. Bu Olaya Permission Yetkisi Denilir.\par
+\par
+Permissionlar\u305? (\u304?zinleri) A\f0\'e7\f1\u305?k Olan Bir Sunucuda \u304?stedi\u287?iniz B\f0\'fct\'fcn Dosya ve Klas\'f6ri Okuyabilir, Silebilir veya Y\'fckleme Yapabilirsiniz. \f1\u304?zinleri Kapal\u305? Bir Sunucuda \u304?se Bu Yetkiler S\u305?n\u305?rl\u305?d\u305?r. Tam Yetkiye Ula\'baabilmeniz \u304?\f0\'e7in Serveri Rootlaman\f1\u305?z Gerekmektedir.\par
+\par
+Bir shelli En \u304?yi \'aaekilde Kullanabilmek \u304?\f0\'e7in shell Komutlar\f1\u305?n\u305? \u304?yi Bilmek Gerekir. Bunun Sebebi \u304?se S\u305?n\u305?rl\u305? Eri\'baiminiz Olan Sunucularda Tam Yetkiye Sahip Olman\u305?z \u304?\f0\'e7indir.\par
+\par
+Bir \'c7ok Sunucuda Manuel Ge\'e7i\f1\'balere \u304?zin Verilmektedir. Spoll/Mail K\u305?sm\u305?ndan Sunucudaki Di\u287?er Sitelerin Kullan\u305?c\u305? Ad\u305?n\u305? \f0\'d6\f1\u287?renerek Adres \f0\'c7ucu\f1\u287?undan Manuel Ge\f0\'e7i\f1\'balerde Yapabilirsiniz.\par
+\par
+\par
+Baz\u305? Durumlarda \u304?se shell Y\f0\'fckledi\f1\u287?imiz Sitede Ya Permissionlar S\u305?n\u305?rl\u305? Yetkilere Sahiptir, Yada Yine Sadece Y\f0\'fckledi\f1\u287?imiz Sitede S\u305?n\u305?rs\u305?z Yetkiye Sahip Olabiliyoruz. Burada S\u305?n\u305?rs\u305?z Yetkimiz Var \u304?se ve Sadece \u304?ndex At\u305?p \f0\'c7\f1\u305?kmak \u304?stiyorsak \u304?ndex.html Dosyam\u305?z\u305? Upload Eder \f0\'c7\f1\u305?kar\u305?z. Eyerki Yetkilerimiz S\u305?n\u305?rland\u305?r\u305?lm\u305?\'ba \u304?se Sitedeki Config Dosyalar\u305?na Ula\'ba\u305?p Okuyarak SQL \u304?le Eri\'baim Sa\u287?laya Biliriz...\par
+\par
+shelli Ne \u304?\f0\'e7in ve Hangi A\f1\'baamalarda Kulland\u305?\u287?\u305?m\u305?z\u305? Hacker Diliyle Anlatt\u305?m Bir Di\u287?er Maddeye Ge\f0\'e7elim. Bu Maddemizde Anlamad\f1\u305?\u287?\u305?n veya Yeniden Anlat\u305?lmas\u305?n\u305? \u304?stedi\u287?iniz Bir Yer Olursa Konu Ald\u305?nda Belirtiniz.\par
+\par
+2) shell Nas\u305?l At\u305?l\u305?r?\par
+\par
+A\'baamalar\u305?:\par
+* Remote File Iclusion A\f0\'e7\f1\u305?klar\u305?ndan Faydalanabiliriz\par
+* SQL Injection A\f0\'e7\f1\u305?klar\u305?ndan Faydalanabiliriz\par
+* Exploits Kullanarak Y\f0\'fckleme Yapabiliriz\par
+* Upload A\'e7\f1\u305?klar\u305?ndan Faydalanabiliriz\par
+* Logger vb Spy Yaz\u305?l\u305?mlardan Faydalanabiliriz\par
+* Hedef Sunucudan Hesap A\f0\'e7arak Y\'fckleme Yapabiliriz\par
+* Sosyal M\'fchendislik Kullanarak Y\'fckleme Yapabiliriz\par
+\par
+1) Remote File Inclusion A\'e7\f1\u305?klar\u305?n\u305? Kullanarak .Txt Uzant\u305?l\u305? shellimizden Yukar\u305?da Bahseti\u287?im Yetkiler \f0\'c7er\'e7evesinde (Permissionlar) \f1\u304?stedi\u287?imiz Gibi .Php Uzant\u305?l\u305? shell Y\f0\'fckleyebiliriz. veya Ba\f1\u287?land\u305?\u287?\u305?m\u305?z .Txt shell ile Yine Sunucu Yetkileri \f0\'c7er\'e7evesinde Alt Dizinlere Ge\'e7ebiliriz yada \f1\u304?ndeximizi Upload Eder \f0\'c7\f1\u305?kar\u305?z.\par
+\par
+\f0\'d6rnek:\par
+\par
+SiteAdi.Com - Siteadi.com\par
+\par
+\f1\u304?le Ba\u287?land\u305?\u287?\u305?m\u305?z Siteye .php Uzant\u305?l\u305? shelli Upload Edersek Kullan\u305?m\u305? \'aau \'aaekilde Olur.\par
+\par
+SiteAdi.Com - Siteadi.com\par
+\par
+\'aaeklinde Kullan\u305?ma Ge\f0\'e7ebiliriz.\par
+\par
+RFI Konusunu Art\f1\u305?k Bilmeyen Yok \'aauanda RFI Bitmesede \f0\'c7ok Nadir Rastlanan A\'e7\f1\u305?klar Haline Deldi. Bu Y\f0\'fczden B\'fct\'fcn Hakcing Bilgilerinizi RFI A\'e7\f1\u305?\u287?\u305?na Ba\u287?lamay\u305?n.\par
+\par
+2) SQL Injection A\f0\'e7\f1\u305?\u287?\u305?yla Nas\u305?l shell Atacaz. \f0\'d6ncelikle SQL A\'e7\f1\u305?\u287?\u305?n\u305? Kullanmas\u305?n\u305? Bilen Mant\u305?\u287?\u305? Hemen Anlar, nedir Bu Mant\u305?k? SQL Kodlar\u305? Yard\u305?m\u305?yla Site Sahibinin Kullan\u305?c\u305? Ad\u305? ve \'aaifresini Elde Ediyoruz. Kimi Zaman MD5 Seklinde \'aaifre Gelir, Bizde MD5 Cracker Yard\u305?m\u305?yla K\u305?rar\u305?z.\par
+\par
+Elde Etti\u287?imiz Kullan\u305?c\u305? Ad\u305? ve \'aaifre \u304?le Siteye Giri\'ba Yapar\u305?z Admin Panelden Bir Upload Yeri Bulur shell Dosyam\u305?z\u305? (.php veya .asp) Upload Ederiz ve Yine Sunucuya Ba\u287?lanm\u305?\'ba Oluruz.\par
+\par
+SQL \'aauanda Kullan\u305?lan Yayg\u305?n Hacking Y\f0\'f6ntemlerinden Biridir. \'c7ok B\'fcy\'fck Sitelerde Bile Rastlanan Hi\'e7 De\f1\u287?ilse Her Serverde En Az 1 den Fazla Sitede Rastlanan A\f0\'e7\f1\u305?kt\u305?r.\par
+\par
+3) Exploits Kullanarak shell Atabiliriz Buda Yine Derlenmi\'ba Exploitler Sayesinde Sitenin Admin Bilgilerini (kullan\u305?c\u305? ad\u305? ve \'baifresini) Elde Ederek Admin Panelden shell Upload Edebiliriz ve Yine Sunucuda Yetkilerimiz Dahilinde \u304?\'balem Yapabiliriz.\par
+\par
+Buna \'aa\f0\'f6yle Bir \'d6rnek Vereyim, Bir D\'f6nem IPB Forumlar\f1\u305?nda Exploits Sayesinde Admin \'aaifrelerine Ula\'baabiliyorduk. Hala \f0\'c7o\f1\u287?u IPB Forumlar\u305?nda shellerim Bulunmakta.\par
+\par
+4) Upload A\f0\'e7\f1\u305?klar\u305?ndan Faydalanarak Sitelere shell Y\f0\'fckleyebiliriz. Burada Genellikle .php veya .asp Uzant\f1\u305?l\u305? shellerimizi Kabul Etmeyen Upload Siteleriyle Kar\'ba\u305?la\'ba\u305?yoruz. Bunun \u304?\f0\'e7in shell \f1\u304?\f0\'e7ine GIF89;a Yaz\f1\u305?s\u305?n\u305? Ekleyerek Upload Sayfas\u305?n\u305?n Y\f0\'fckleyece\f1\u287?imiz shelli Resim Dosyas\u305? Olarak G\f0\'f6rmesini Sa\f1\u287?lar\u305?z.\par
+\par
+Akl\u305?n\u305?z\u305?n Almayaca\u287?\u305? Kadar \f0\'c7ok Upload Dosyalar\f1\u305? Vard\u305?r. Bunlardan En \f0\'c7ok Kullan\f1\u305?lan Bir \u304?ki Tanesini Yazay\u305?m.\par
+\par
+upload.php , upload.asp , upload.htm , upload.html\par
+\par
+Bu Uzant\u305?lar\u305? ve Upload Sayfalar\u305?n\u305? Hayal G\f0\'fcc\'fcn\'fcze Ba\f1\u287?l\u305? \f0\'c7o\f1\u287?alta Bilirsiniz.\par
+\par
+5) Hi\f0\'e7 Tavsiye Etmedi\f1\u287?im ve Hi\f0\'e7 Kullanmad\f1\u305?\u287?\u305?m Ancak Buda Bir Hacking Y\f0\'f6ntemi Oldu\f1\u287?u \u304?\f0\'e7in A\'e7\f1\u305?klamak Zorunda Kald\u305?\u287?\u305?m Bir Y\f0\'f6ntem. Logger vb Spy Yaz\f1\u305?l\u305?mlar Sayesinde shell Nas\u305?l At\u305?l\u305?r? \f0\'d6ncelikle Hedef Sitemizin Adminini Buluyoruz Gerekli SM vb \f1\u304?\'balemleri Ger\f0\'e7ekle\f1\'batirdikten Sonra Loggeri Yedirip Admin \'aaifreleride Dahil Olmak \f0\'dczere FTP ve Mail \f1\'aaifrelerini Al\u305?r\u305?z. Ald\u305?\u287?\u305?m\u305?z \'aaifreler Sayesinde Site Sahibinin Yetkilerini Almam\u305?za Ra\u287?men FTP Sine Girdi\u287?imiz Sitenin Sunusunada Ula\'bamak \u304?stiyorsan shell Upload Eder ve Yetkilerimiz \f0\'c7er\'e7evesinde \f1\u304?zinlerimizi Kullanarak Siteyi veya Serveri Hackleye Biliriz.\par
+\par
+6) Bu Maddemizde \u304?se Diyelimki Hedef bir Site var. Sitede Her \'aaeyi Yapmam\u305?za Ra\u287?men Bir T\f0\'fcrl\'fc A\'e7\f1\u305?k Bulamad\u305?k. Genelde Son \f0\'c7are Olarak Kullan\f1\u305?lan Bu Y\f0\'f6ntemle Hostcuyla \f1\u304?rtibata Ge\f0\'e7er SM Yaparak Sunucudan Bir Hesap A\'e7ar\f1\u305?z A\f0\'e7t\f1\u305?\u287?\u305?m\u305?z Hesapta G\f0\'f6z Boyamak Ad\f1\u305?na Ufak Tefek Portallar Kurar ve FTP mize shell Atarak Serveri Rootlar Hedef Siteye Ula\'ba\u305?r\u305?z veya Manuel Ge\f0\'e7iler Yaparakda Hedef Siteye Ula\f1\'baabiliriz.\par
+\par
+7) Sosyal M\f0\'fchendislik Y\'f6ntemiyle Siteye shell Y\'fckleye Biliriz. Burada \f1\u304?\'bain \u304?\f0\'e7ine SM Girdi\f1\u287?i \u304?\f0\'e7in Belirli Bir Y\'f6ntem Yoktur. Ancak SM Yapan Ki\f1\'bainin Kabiliyetine Ba\u287?l\u305?d\u305?r. Bir Ki\'bai Sosyal M\f0\'fchendislik Yapabilecek Kabiliyetteyse \'c7ok Kolay ve Rahat Bir \f1\'aaekilde \f0\'c7e\f1\'baitli Yollarla Siteye veya FTP ye Ula\'baarak shell Atabilir.\par
+\par
+shell Nas\u305?l At\u305?l\u305?r Maddemizde Burada Bitmi\'batir. Yukar\u305?da Belirtti\u287?im 7 Madde \f0\'c7o\f1\u287?alt\u305?labilir. Bu Konuda da Anlamad\u305?\u287?\u305?n\u305?z veya Daha Detayl\u305? Anlatmam\u305? \u304?stedi\u287?iniz Yerleri Konu Alt\u305?na Belirtirseniz Farkl\u305? veya Daha Geni\'ba Anlat\u305?mlar Yapabilirim.\par
+\par
+3) Ka\f0\'e7 T\'fcr shell Vard\f1\u305?r?\par
+\par
+Genel Olarak Kullan\u305?lan 2, 3 \f0\'c7e\f1\'bait shell Vard\u305?r. Bunar\u305?n Uzant\u305?lar\u305? .php, .asp ve .aspx Dir. \'aauanda Zannediyorum 100 lerce shell Var Ancak Hemen Hemen Hepsinin \f0\'c7al\f1\u305?\'bama Mant\u305?\u287?\u305? Ayn\u305?.\par
+\par
+En\f0\'e7ok Kullan\f1\u305?lan sheller:\par
+\par
+C99.php (Yeni Ba\'balayanlar \u304?\f0\'e7in Kullan\f1\u305?m\u305? Kolay Bir shell)\par
+R57.php ( shell Olay\u305?n\u305? Art\u305?k \f0\'c7\'f6zm\'fc\f1\'ba Kod Bilgisine D\f0\'f6ken Ki\f1\'bailer Kullan\u305?yor)\par
+CyberSpy5.asp ( Genelde Kulland\u305?\u287?\u305?m sheller Aras\u305?ndad\u305?r.)\par
+LORD.aspx ( Zaman Zaman Kulland\u305?\u287?\u305?m Bir shelldir.)\par
+c99 veya r57 .txt sheller ( Bunlar RFI \u304?\f0\'e7in Kullan\f1\u305?lan shellerdir)\par
+NOT: RFI de .asp shell veya .php shell Kullan\u305?lmaz.\par
+\par
+\'aaimdi \'aa\f0\'f6yle Bir Bakal\f1\u305?m.\par
+\par
+.php Uzant\u305?l\u305? sheller Unix, Linux, FreeBSD Sunucular\u305?nda Kullan\u305?l\u305?r.\par
+.asp Uzant\u305?l\u305? sheller \u304?se Windows Sunucularda Kullan\u305?l\u305?r.\par
+\par
+\'aaimdi Siz Bir Linux Servere .asp Uzant\u305?l\u305? shell Atamazs\u305?n\u305?z Atsan\u305?z Dahi \f0\'c7al\f1\u305?\'bat\u305?ramazs\u305?n\u305?z.\par
+\par
+Ancak Windows Serverlere Nadirende Olsa Rastlam\u305?\'ba\u305?md\u305?r. .php Uzant\u305?l\u305? sheller At\u305?labiliryor. Ancak .asp shell Kadar Yetki Vermiyor. Genelde Editleme Yetkisine Rastlad\u305?m. Y\f0\'fckleme ve Silme Yetkileri Bulunmamakta.\par
+\par
+Bu Y\'fczden shell Y\'fckleyece\f1\u287?iniz Sitenin Sistemi \u304?yi Bilmeniz Gerekiyor.\f0\lang31\par
+}
+ 
